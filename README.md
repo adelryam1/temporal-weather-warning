@@ -1,6 +1,6 @@
 # Automated Temporal Weather Warning System
 
-This project is an automated weather monitoring and alert system built using Python and Temporal. It fetches real-time precipitation data for specific cities, analyzes the flood risk, and utilizes **Gemini AI** to generate a formatted social media advisory.
+This project is an automated weather monitoring and alert system built using Python and Temporal. It fetches real-time weather data (precipitation, temperature, and wind speed) for specific cities, analyzes multiple hazard risks (floods, heat waves, and typhoons), and generates a customized social media advisory using Google Gemini AI.
 
 ## 📁 File Structure
 * `weather_workflow.py`: Contains the Activity definitions (API fetching, risk analysis, post generation) and the Workflow definition. It includes a bypass for Temporal's strict sandbox to safely allow the `requests` library in activities.

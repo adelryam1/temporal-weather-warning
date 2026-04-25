@@ -7,7 +7,7 @@ from temporalio.worker import Worker
 from weather_workflow import (
     WeatherWarningWorkflow, 
     fetch_weather_data, 
-    analyze_flood_risk, 
+    analyze_weather_risks, # <--- UPDATED THIS NAME
     generate_warning_post
 )
 
@@ -20,7 +20,8 @@ async def main():
         client,
         task_queue="weather-task-queue",
         workflows=[WeatherWarningWorkflow],
-        activities=[fetch_weather_data, analyze_flood_risk, generate_warning_post],
+        # V--- UPDATED THE NAME IN THIS LIST TOO
+        activities=[fetch_weather_data, analyze_weather_risks, generate_warning_post],
         activity_executor=concurrent.futures.ThreadPoolExecutor(), # <--- NEW LINE ADDED HERE
     )
 
